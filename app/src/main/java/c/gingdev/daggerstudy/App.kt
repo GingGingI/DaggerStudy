@@ -12,14 +12,10 @@ class App: Application() {
 //    Basic App Module
     val NetworkModule: BasicNetworkComponent by lazy {
         DaggerBasicNetworkComponent.builder()
+            .appModule(AppModule(this))
             .networkModule(NetworkModule())
             .preferenceModule(PreferenceModule())
-            .appModule(AppModule(this))
             .build()
-    }
-
-    override fun onCreate() {
-        super.onCreate()
     }
 
     companion object {

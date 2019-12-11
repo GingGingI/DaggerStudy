@@ -20,7 +20,7 @@ class NetworkModule {
     private val CONNECT_TIMEOUT: Long = 30 //Sec
     private val WRITE_TIMEOUT: Long = 30 //Sec
     private val READ_TIMEOUT: Long = 30 //Sec
-    private val baseUrl: String = "serverUrl"
+    private val baseUrl: String = "https://www.google.com"
 
     @Provides
     @Singleton
@@ -64,6 +64,7 @@ class NetworkModule {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(client)
+            .baseUrl(baseUrl)
             .build()
     }
 

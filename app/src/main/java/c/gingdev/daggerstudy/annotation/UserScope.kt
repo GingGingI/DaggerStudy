@@ -1,4 +1,4 @@
-package c.gingdev.daggerstudy.etc
+package c.gingdev.daggerstudy.annotation
 
 import javax.inject.Scope
 

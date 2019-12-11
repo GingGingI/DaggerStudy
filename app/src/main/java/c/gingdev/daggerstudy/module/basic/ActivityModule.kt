@@ -1,7 +1,7 @@
 package c.gingdev.daggerstudy.module.basic
 
 import android.app.Activity
-import c.gingdev.daggerstudy.etc.UserScope
+import c.gingdev.daggerstudy.annotation.UserScope
 import dagger.Module
 import dagger.Provides
 
