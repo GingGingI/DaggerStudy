@@ -1,15 +1,22 @@
 package c.gingdev.daggerstudy
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import c.gingdev.daggerstudy.component.DaggerActivityComponent
+import c.gingdev.daggerstudy.ui.InjectableActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : InjectableActivity() {
+    override fun inject() {
+        DaggerActivityComponent.builder()
+            .basicNetworkComponent(App.getNetworkComponent(this))
+            .build().inject(this)
+    }
 
-//    https://medium.com/@joongwon/%EC%BD%94%ED%8B%80%EB%A6%B0-kotlin-with-dagger2-11fe36126dd6
+    override fun getLayoutResId(): Int {
+        return R.layout.activity_main
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
 
+    }
 }

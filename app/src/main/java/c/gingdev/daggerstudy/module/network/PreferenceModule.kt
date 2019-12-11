@@ -1,6 +1,7 @@
 package c.gingdev.daggerstudy.module.network
 
 import android.app.Application
+import c.gingdev.daggerstudy.App
 import c.gingdev.daggerstudy.`object`.SettingPreference
 import dagger.Module
 import dagger.Provides
@@ -10,7 +11,7 @@ import javax.inject.Singleton
 class PreferenceModule {
     @Provides
     @Singleton
-    fun provideSettingPreference(app: Application): SettingPreference {
+    fun provideSettingPreference(app: App): SettingPreference {
         return SettingPreference(app)
     }
 }

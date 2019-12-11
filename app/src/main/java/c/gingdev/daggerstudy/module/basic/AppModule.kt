@@ -1,6 +1,7 @@
 package c.gingdev.daggerstudy.module.basic
 
 import android.app.Application
+import c.gingdev.daggerstudy.App
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -10,7 +11,7 @@ import javax.inject.Singleton
  * */
 
 @Module
-class AppModule(private val app: Application) {
+class AppModule(private val app: App) {
     @Provides
     @Singleton
     fun provideApp() = app

@@ -1,7 +1,7 @@
 package c.gingdev.daggerstudy.`object`
 
-import android.app.Application
+import c.gingdev.daggerstudy.App
 
-class SettingPreference(app: Application) {
+class SettingPreference(app: App) {
 
 }

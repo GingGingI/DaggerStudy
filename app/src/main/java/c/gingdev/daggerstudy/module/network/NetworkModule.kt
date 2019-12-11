@@ -1,6 +1,6 @@
 package c.gingdev.daggerstudy.module.network
 
-import android.app.Application
+import c.gingdev.daggerstudy.App
 import c.gingdev.daggerstudy.BuildConfig
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -16,16 +16,16 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module
-class BasicNetworkModule {
-    private val CONNECT_TIMEOUT: Long = 30
-    private val WRITE_TIMEOUT: Long = 30
-    private val READ_TIMEOUT: Long = 30
+class NetworkModule {
+    private val CONNECT_TIMEOUT: Long = 30 //Sec
+    private val WRITE_TIMEOUT: Long = 30 //Sec
+    private val READ_TIMEOUT: Long = 30 //Sec
     private val baseUrl: String = "serverUrl"
 
     @Provides
     @Singleton
-    fun provideCache(app: Application): Cache {
-        val chacheSize = 10 * 1024 * 1024
+    fun provideCache(app: App): Cache {
+        val chacheSize = 10 * 1024 * 1024 //10MB
         return Cache(app.cacheDir, chacheSize.toLong())
     }
 
