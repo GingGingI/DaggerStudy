@@ -1,6 +1,5 @@
 package c.gingdev.daggerstudy.module.basic
 
-import android.app.Application
 import c.gingdev.daggerstudy.App
 import dagger.Module
 import dagger.Provides
